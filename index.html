@@ -12,7 +12,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
     --purple: #534AB7;
     --purple-light: #EEEDFE;
@@ -28,11 +27,8 @@
     --radius: 12px;
     --radius-sm: 8px;
   }
-
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; font-size: 16px; }
-
-  /* NAV */
   nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 0 24px; }
   .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 60px; }
   .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
@@ -44,8 +40,6 @@
   .nav-link:hover { background: var(--bg-secondary); color: var(--text); }
   .nav-cta { padding: 8px 18px; background: var(--purple); color: white; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; text-decoration: none; transition: 0.15s; }
   .nav-cta:hover { background: var(--purple-dark); }
-
-  /* HERO */
   .hero { padding: 80px 24px 60px; text-align: center; background: linear-gradient(180deg, #EEEDFE 0%, #ffffff 100%); }
   .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: white; border: 1px solid var(--purple-mid); border-radius: 20px; padding: 5px 14px; font-size: 12px; color: var(--purple-dark); font-weight: 500; margin-bottom: 28px; }
   .hero-badge span { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; display: inline-block; }
@@ -61,14 +55,11 @@
   .hero-stat { text-align: center; }
   .hero-stat-num { font-size: 26px; font-weight: 600; color: var(--text); }
   .hero-stat-lbl { font-size: 13px; color: var(--text-secondary); }
-
-  /* TOOL SECTION */
   .tool-section { padding: 80px 24px; background: var(--bg); }
   .section-inner { max-width: 820px; margin: 0 auto; }
   .section-label { font-size: 12px; font-weight: 600; color: var(--purple); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
   .section-title { font-family: 'Syne', sans-serif; font-size: clamp(26px, 4vw, 38px); font-weight: 700; margin-bottom: 12px; }
   .section-sub { font-size: 16px; color: var(--text-secondary); margin-bottom: 40px; }
-
   .tool-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; box-shadow: 0 2px 20px rgba(0,0,0,0.05); }
   .type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; margin-bottom: 20px; }
   .type-btn { padding: 12px 8px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-secondary); cursor: pointer; font-size: 13px; color: var(--text-secondary); text-align: center; transition: 0.15s; font-family: 'Inter', sans-serif; }
@@ -84,32 +75,25 @@
   .gen-btn { width: 100%; padding: 14px; background: var(--purple); color: white; border: none; border-radius: var(--radius-sm); font-size: 15px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Inter', sans-serif; transition: 0.15s; margin-top: 4px; }
   .gen-btn:hover { background: var(--purple-dark); }
   .gen-btn:disabled { background: #ccc; cursor: not-allowed; }
-
   .usage-row { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 10px 14px; }
   .usage-bar { flex: 1; height: 5px; background: var(--border); border-radius: 3px; }
   .usage-fill { height: 5px; background: var(--purple); border-radius: 3px; transition: width 0.4s; }
   .usage-text { font-size: 12px; color: var(--text-secondary); white-space: nowrap; }
-
   .output-box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 20px; margin-top: 20px; display: none; }
   .output-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
   .output-label { font-size: 13px; font-weight: 500; color: var(--teal); display: flex; align-items: center; gap: 6px; }
   .copy-btn { padding: 5px 12px; border: 1px solid var(--border); border-radius: 6px; background: white; font-size: 12px; cursor: pointer; font-family: 'Inter', sans-serif; }
   .output-text { font-size: 14px; color: var(--text); line-height: 1.8; white-space: pre-wrap; }
-
   .upgrade-box { background: var(--purple-light); border: 1px solid var(--purple-mid); border-radius: var(--radius); padding: 20px 24px; margin-top: 20px; display: none; }
   .upgrade-box h3 { font-size: 16px; font-weight: 600; color: var(--purple-dark); margin-bottom: 6px; }
   .upgrade-box p { font-size: 14px; color: var(--purple); margin-bottom: 14px; }
   .upgrade-btn { padding: 10px 22px; background: var(--purple); color: white; border: none; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; cursor: pointer; font-family: 'Inter', sans-serif; }
-
-  /* FEATURES */
   .features { padding: 80px 24px; background: var(--bg-secondary); }
   .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
   .feature-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
   .feature-icon { width: 44px; height: 44px; background: var(--purple-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; font-size: 22px; }
   .feature-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
   .feature-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
-
-  /* PRICING */
   .pricing { padding: 80px 24px; background: white; }
   .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 860px; margin: 0 auto; }
   .price-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
@@ -125,8 +109,6 @@
   .price-btn { width: 100%; padding: 12px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif; border: 1px solid var(--border); background: white; transition: 0.15s; }
   .price-btn.filled { background: var(--purple); color: white; border-color: var(--purple); }
   .price-btn:hover { background: var(--purple-dark); color: white; border-color: var(--purple-dark); }
-
-  /* TESTIMONIALS */
   .testimonials { padding: 80px 24px; background: var(--bg-secondary); }
   .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; max-width: 1000px; margin: 0 auto; }
   .testi-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
@@ -134,8 +116,6 @@
   .testi-text { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 14px; }
   .testi-author { font-size: 13px; font-weight: 600; color: var(--text); }
   .testi-role { font-size: 12px; color: var(--text-secondary); }
-
-  /* FAQ */
   .faq { padding: 80px 24px; max-width: 680px; margin: 0 auto; }
   .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; cursor: pointer; }
   .faq-q { font-size: 15px; font-weight: 500; display: flex; justify-content: space-between; align-items: center; }
@@ -143,24 +123,16 @@
   .faq-item.open .faq-a { max-height: 200px; margin-top: 10px; }
   .faq-arrow { font-size: 18px; color: var(--text-secondary); transition: transform 0.3s; }
   .faq-item.open .faq-arrow { transform: rotate(45deg); }
-
-  /* CTA BANNER */
   .cta-banner { padding: 80px 24px; background: var(--purple); text-align: center; }
   .cta-banner h2 { font-family: 'Syne', sans-serif; font-size: clamp(26px, 4vw, 42px); font-weight: 700; color: white; margin-bottom: 14px; }
   .cta-banner p { font-size: 16px; color: rgba(255,255,255,0.8); margin-bottom: 28px; }
   .btn-white { padding: 14px 32px; background: white; color: var(--purple); border-radius: var(--radius-sm); font-size: 15px; font-weight: 600; text-decoration: none; border: none; cursor: pointer; font-family: 'Inter', sans-serif; }
-
-  /* FOOTER */
   footer { background: #111; color: rgba(255,255,255,0.6); padding: 40px 24px; text-align: center; }
   footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
   .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; font-size: 14px; }
   .footer-copy { font-size: 13px; }
-
-  /* SPINNER */
   .spinner { width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.7s linear infinite; display: inline-block; }
   @keyframes spin { to { transform: rotate(360deg); } }
-
-  /* RESPONSIVE */
   @media (max-width: 600px) {
     .form-row { grid-template-columns: 1fr; }
     .nav-links .nav-link { display: none; }
@@ -171,7 +143,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="#" class="logo">
@@ -189,7 +160,6 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-badge"><span></span> Trusted by 12,000+ writers worldwide</div>
   <h1>Write anything<br>with <em>AI</em> — in seconds</h1>
@@ -206,7 +176,6 @@
   </div>
 </section>
 
-<!-- TOOL -->
 <section class="tool-section" id="tool">
   <div class="section-inner">
     <div class="section-label">AI Writing Tool</div>
@@ -231,12 +200,10 @@
           <button class="type-btn" onclick="selectType(this,'seo')"><div class="type-btn-icon">🔍</div>SEO article</button>
         </div>
       </div>
-
       <div class="form-group" style="margin-bottom:16px">
         <label for="topic">Your topic or idea</label>
         <textarea id="topic" placeholder="e.g. How to start a freelancing business in Pakistan with no experience..."></textarea>
       </div>
-
       <div class="form-row">
         <div class="form-group">
           <label for="tone">Tone</label>
@@ -259,10 +226,7 @@
           </select>
         </div>
       </div>
-
-      <button class="gen-btn" id="gen-btn" onclick="generate()">
-        ✦ Generate with AI
-      </button>
+      <button class="gen-btn" id="gen-btn" onclick="generate()">✦ Generate with AI</button>
     </div>
 
     <div class="output-box" id="output-box">
@@ -281,47 +245,21 @@
   </div>
 </section>
 
-<!-- FEATURES -->
 <section class="features" id="features">
   <div style="max-width:1100px;margin:0 auto;padding-bottom:40px;text-align:center">
     <div class="section-label">Why WriteAI Pro</div>
     <h2 class="section-title">Everything you need to write faster</h2>
   </div>
   <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-icon">⚡</div>
-      <div class="feature-title">Instant generation</div>
-      <div class="feature-desc">Get full blog posts, emails, and ads in under 30 seconds. No waiting, no writer's block.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🌍</div>
-      <div class="feature-title">Multi-language support</div>
-      <div class="feature-desc">Write in English, Urdu, Roman Urdu, Arabic, Hindi and more. Reach any audience globally.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🎯</div>
-      <div class="feature-title">6 content types</div>
-      <div class="feature-desc">Blogs, emails, ads, social posts, product descriptions, and SEO articles — all in one tool.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🔧</div>
-      <div class="feature-title">Custom tone & style</div>
-      <div class="feature-desc">Choose professional, friendly, persuasive, or casual — AI adapts to your brand voice.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📋</div>
-      <div class="feature-title">One-click copy</div>
-      <div class="feature-desc">Copy your content instantly and paste it anywhere — WordPress, Gmail, Instagram, anywhere.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🔒</div>
-      <div class="feature-title">Secure & private</div>
-      <div class="feature-desc">Your content is never stored or shared. What you write stays yours, always.</div>
-    </div>
+    <div class="feature-card"><div class="feature-icon">⚡</div><div class="feature-title">Instant generation</div><div class="feature-desc">Get full blog posts, emails, and ads in under 30 seconds. No waiting, no writer's block.</div></div>
+    <div class="feature-card"><div class="feature-icon">🌍</div><div class="feature-title">Multi-language support</div><div class="feature-desc">Write in English, Urdu, Roman Urdu, Arabic, Hindi and more. Reach any audience globally.</div></div>
+    <div class="feature-card"><div class="feature-icon">🎯</div><div class="feature-title">6 content types</div><div class="feature-desc">Blogs, emails, ads, social posts, product descriptions, and SEO articles — all in one tool.</div></div>
+    <div class="feature-card"><div class="feature-icon">🔧</div><div class="feature-title">Custom tone & style</div><div class="feature-desc">Choose professional, friendly, persuasive, or casual — AI adapts to your brand voice.</div></div>
+    <div class="feature-card"><div class="feature-icon">📋</div><div class="feature-title">One-click copy</div><div class="feature-desc">Copy your content instantly and paste it anywhere — WordPress, Gmail, Instagram, anywhere.</div></div>
+    <div class="feature-card"><div class="feature-icon">🔒</div><div class="feature-title">Secure & private</div><div class="feature-desc">Your content is never stored or shared. What you write stays yours, always.</div></div>
   </div>
 </section>
 
-<!-- PRICING -->
 <section class="pricing" id="pricing">
   <div style="text-align:center;margin-bottom:40px">
     <div class="section-label">Pricing</div>
@@ -375,72 +313,38 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section class="testimonials">
   <div style="text-align:center;margin-bottom:40px;max-width:1000px;margin-left:auto;margin-right:auto;padding-bottom:40px">
     <div class="section-label">Testimonials</div>
     <h2 class="section-title">Loved by writers everywhere</h2>
   </div>
   <div class="testi-grid">
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"I used to spend 3 hours writing a blog post. Now WriteAI Pro does it in 30 seconds. It literally changed my business."</p>
-      <div class="testi-author">Ahmed R.</div>
-      <div class="testi-role">Content creator, Pakistan</div>
-    </div>
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"The Urdu content it generates is surprisingly natural. My social media engagement doubled since I started using it."</p>
-      <div class="testi-author">Sara M.</div>
-      <div class="testi-role">Social media manager, UAE</div>
-    </div>
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"Best $9 I spend every month. I use it for email campaigns and the persuasive tone option is incredible for sales."</p>
-      <div class="testi-author">James T.</div>
-      <div class="testi-role">E-commerce owner, UK</div>
-    </div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">"I used to spend 3 hours writing a blog post. Now WriteAI Pro does it in 30 seconds. It literally changed my business."</p><div class="testi-author">Ahmed R.</div><div class="testi-role">Content creator, Pakistan</div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">"The Urdu content it generates is surprisingly natural. My social media engagement doubled since I started using it."</p><div class="testi-author">Sara M.</div><div class="testi-role">Social media manager, UAE</div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">"Best $9 I spend every month. I use it for email campaigns and the persuasive tone option is incredible for sales."</p><div class="testi-author">James T.</div><div class="testi-role">E-commerce owner, UK</div></div>
   </div>
 </section>
 
-<!-- FAQ -->
 <section style="padding:80px 24px;background:white">
   <div class="faq">
     <div style="text-align:center;margin-bottom:40px">
       <div class="section-label">FAQ</div>
       <h2 class="section-title">Common questions</h2>
     </div>
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">Is the free plan actually free? <span class="faq-arrow">+</span></div>
-      <div class="faq-a">Yes, 100% free. You get 3 generations per day forever with no credit card required.</div>
-    </div>
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">What languages are supported? <span class="faq-arrow">+</span></div>
-      <div class="faq-a">We support English, Urdu, Roman Urdu, Arabic, Hindi and more. Pro users get access to all available languages.</div>
-    </div>
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">Can I cancel my Pro subscription anytime? <span class="faq-arrow">+</span></div>
-      <div class="faq-a">Yes, cancel anytime with one click. No questions asked, no hidden fees.</div>
-    </div>
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">Is my content private? <span class="faq-arrow">+</span></div>
-      <div class="faq-a">Absolutely. Your inputs and generated content are never stored on our servers. Everything stays private.</div>
-    </div>
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">How long is the generated content? <span class="faq-arrow">+</span></div>
-      <div class="faq-a">Free plan generates 150-200 word pieces. Pro plan unlocks long-form content up to 2000+ words.</div>
-    </div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Is the free plan actually free? <span class="faq-arrow">+</span></div><div class="faq-a">Yes, 100% free. You get 3 generations per day forever with no credit card required.</div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">What languages are supported? <span class="faq-arrow">+</span></div><div class="faq-a">We support English, Urdu, Roman Urdu, Arabic, Hindi and more. Pro users get access to all available languages.</div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Can I cancel my Pro subscription anytime? <span class="faq-arrow">+</span></div><div class="faq-a">Yes, cancel anytime with one click. No questions asked, no hidden fees.</div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Is my content private? <span class="faq-arrow">+</span></div><div class="faq-a">Absolutely. Your inputs and generated content are never stored on our servers. Everything stays private.</div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">How long is the generated content? <span class="faq-arrow">+</span></div><div class="faq-a">Free plan generates 150-200 word pieces. Pro plan unlocks long-form content up to 2000+ words.</div></div>
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-banner">
   <h2>Start writing smarter today</h2>
   <p>Join 12,000+ writers using AI to create content faster than ever before.</p>
   <button class="btn-white" onclick="document.getElementById('tool').scrollIntoView({behavior:'smooth'})">Try it free — no signup needed</button>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-links">
     <a href="#">Home</a>
@@ -450,18 +354,16 @@
     <a href="#">Terms of Service</a>
     <a href="#">Contact</a>
   </div>
-  <div class="footer-copy">© 2025 WriteAI Pro. All rights reserved. Built with ❤️</div>
+  <div class="footer-copy">© 2025 WriteAI Pro. All rights reserved.</div>
 </footer>
 
 <script>
-  // ---- TOOL LOGIC ----
   let selectedType = 'blog';
   let usesLeft = 3;
   const MAX_USES = 3;
 
-  // IMPORTANT: Replace this with your actual Anthropic API key
-  // Get your key at: https://console.anthropic.com/
-  const API_KEY = 'YOUR_ANTHROPIC_API_KEY_HERE';
+  // ⚠️ APNI OPENROUTER API KEY YAHAN PASTE KARO
+  const API_KEY = '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';
 
   function selectType(el, type) {
     document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
@@ -483,14 +385,17 @@
   async function generate() {
     const topic = document.getElementById('topic').value.trim();
     if (!topic) { document.getElementById('topic').focus(); return; }
-    if (usesLeft <= 0) { document.getElementById('upgrade-box').style.display = 'block'; document.getElementById('upgrade-box').scrollIntoView({behavior:'smooth'}); return; }
+    if (usesLeft <= 0) {
+      document.getElementById('upgrade-box').style.display = 'block';
+      document.getElementById('upgrade-box').scrollIntoView({behavior:'smooth'});
+      return;
+    }
 
     const tone = document.getElementById('tone').value;
     const lang = document.getElementById('lang').value;
     const btn = document.getElementById('gen-btn');
     const outBox = document.getElementById('output-box');
     const outText = document.getElementById('output-text');
-
     const typeMap = { blog: 'blog post', email: 'email', ad: 'advertisement copy', social: 'social media post', product: 'product description', seo: 'SEO-optimized article' };
     const prompt = `Write a ${tone} ${typeMap[selectedType]} in ${lang} about: "${topic}". Make it engaging, well-structured, and ready to use. Around 180-220 words.`;
 
@@ -499,13 +404,22 @@
     outBox.style.display = 'none';
 
     try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
+      const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'x-api-key': API_KEY, 'anthropic-version': '2023-06-01' },
-        body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 1000, messages: [{ role: 'user', content: prompt }] })
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + API_KEY,
+          'HTTP-Referer': window.location.href,
+          'X-Title': 'WriteAI Pro'
+        },
+        body: JSON.stringify({
+          model: 'mistralai/mistral-7b-instruct:free',
+          messages: [{ role: 'user', content: prompt }],
+          max_tokens: 800
+        })
       });
       const data = await res.json();
-      const text = data.content?.map(b => b.text || '').join('') || 'Error. Please try again.';
+      const text = data.choices?.[0]?.message?.content || 'Error generating. Please try again.';
       outText.textContent = text;
       outBox.style.display = 'block';
       outBox.scrollIntoView({ behavior: 'smooth' });
@@ -513,7 +427,7 @@
       updateUsage();
       if (usesLeft === 0) setTimeout(() => { document.getElementById('upgrade-box').style.display = 'block'; }, 600);
     } catch(e) {
-      outText.textContent = 'Network error. Please check your connection.';
+      outText.textContent = 'Network error. Please check your connection and try again.';
       outBox.style.display = 'block';
     }
 
@@ -530,9 +444,7 @@
     });
   }
 
-  function toggleFaq(el) {
-    el.classList.toggle('open');
-  }
+  function toggleFaq(el) { el.classList.toggle('open'); }
 
   updateUsage();
 </script>
