@@ -11,7 +11,6 @@ export default async function handler(req, res) {
 
   try {
     const { prompt } = req.body;
-
     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -26,16 +25,12 @@ export default async function handler(req, res) {
         max_tokens: 800
       })
     });
-
     const data = await response.json();
-
     if (data.error) {
       return res.status(400).json({ error: data.error.message });
     }
-
     const text = data.choices?.[0]?.message?.content || 'Error generating content.';
     return res.status(200).json({ text });
-
   } catch (error) {
     return res.status(500).json({ error: 'Server error. Please try again.' });
   }
