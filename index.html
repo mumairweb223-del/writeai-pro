@@ -4,31 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="WriteAI Pro — Generate blog posts, emails, ads & social content with AI in seconds. Free to start.">
-<meta name="keywords" content="AI writing tool, content generator, blog writer, email writer, AI copywriting">
-<meta property="og:title" content="WriteAI Pro — Write anything with AI">
-<meta property="og:description" content="Generate blog posts, emails, ads and more in seconds with AI. Free to start.">
 <title>WriteAI Pro — Write anything with AI</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --purple: #534AB7;
-    --purple-light: #EEEDFE;
-    --purple-mid: #AFA9EC;
-    --purple-dark: #3C3489;
-    --teal: #1D9E75;
-    --teal-light: #E1F5EE;
-    --text: #1a1a1a;
-    --text-secondary: #6b6b6b;
-    --border: rgba(0,0,0,0.1);
-    --bg: #ffffff;
-    --bg-secondary: #f8f8f8;
-    --radius: 12px;
-    --radius-sm: 8px;
+    --purple: #534AB7; --purple-light: #EEEDFE; --purple-mid: #AFA9EC;
+    --purple-dark: #3C3489; --teal: #1D9E75; --teal-light: #E1F5EE;
+    --text: #1a1a1a; --text-secondary: #6b6b6b; --border: rgba(0,0,0,0.1);
+    --bg: #ffffff; --bg-secondary: #f8f8f8; --radius: 12px; --radius-sm: 8px;
   }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; font-size: 16px; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
   nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 0 24px; }
   .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 60px; }
   .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
@@ -38,24 +25,21 @@
   .nav-links { display: flex; align-items: center; gap: 8px; }
   .nav-link { padding: 8px 16px; font-size: 14px; color: var(--text-secondary); text-decoration: none; border-radius: var(--radius-sm); transition: 0.15s; }
   .nav-link:hover { background: var(--bg-secondary); color: var(--text); }
-  .nav-cta { padding: 8px 18px; background: var(--purple); color: white; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; text-decoration: none; transition: 0.15s; }
-  .nav-cta:hover { background: var(--purple-dark); }
+  .nav-cta { padding: 8px 18px; background: var(--purple); color: white; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; text-decoration: none; }
   .hero { padding: 80px 24px 60px; text-align: center; background: linear-gradient(180deg, #EEEDFE 0%, #ffffff 100%); }
   .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: white; border: 1px solid var(--purple-mid); border-radius: 20px; padding: 5px 14px; font-size: 12px; color: var(--purple-dark); font-weight: 500; margin-bottom: 28px; }
   .hero-badge span { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; display: inline-block; }
-  h1 { font-family: 'Syne', sans-serif; font-size: clamp(36px, 6vw, 62px); font-weight: 700; color: var(--text); line-height: 1.1; margin-bottom: 20px; }
+  h1 { font-family: 'Syne', sans-serif; font-size: clamp(36px, 6vw, 62px); font-weight: 700; line-height: 1.1; margin-bottom: 20px; }
   h1 em { font-style: normal; color: var(--purple); }
   .hero-sub { font-size: 18px; color: var(--text-secondary); max-width: 520px; margin: 0 auto 36px; }
   .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
-  .btn-primary { padding: 14px 28px; background: var(--purple); color: white; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; border: none; cursor: pointer; transition: 0.15s; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-primary { padding: 14px 28px; background: var(--purple); color: white; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
   .btn-primary:hover { background: var(--purple-dark); }
-  .btn-secondary { padding: 14px 28px; background: white; color: var(--text); border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; border: 1px solid var(--border); cursor: pointer; transition: 0.15s; }
-  .btn-secondary:hover { background: var(--bg-secondary); }
+  .btn-secondary { padding: 14px 28px; background: white; color: var(--text); border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; text-decoration: none; border: 1px solid var(--border); cursor: pointer; }
   .hero-stats { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
-  .hero-stat { text-align: center; }
-  .hero-stat-num { font-size: 26px; font-weight: 600; color: var(--text); }
+  .hero-stat-num { font-size: 26px; font-weight: 600; }
   .hero-stat-lbl { font-size: 13px; color: var(--text-secondary); }
-  .tool-section { padding: 80px 24px; background: var(--bg); }
+  .tool-section { padding: 80px 24px; }
   .section-inner { max-width: 820px; margin: 0 auto; }
   .section-label { font-size: 12px; font-weight: 600; color: var(--purple); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
   .section-title { font-family: 'Syne', sans-serif; font-size: clamp(26px, 4vw, 38px); font-weight: 700; margin-bottom: 12px; }
@@ -63,16 +47,15 @@
   .tool-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; box-shadow: 0 2px 20px rgba(0,0,0,0.05); }
   .type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; margin-bottom: 20px; }
   .type-btn { padding: 12px 8px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-secondary); cursor: pointer; font-size: 13px; color: var(--text-secondary); text-align: center; transition: 0.15s; font-family: 'Inter', sans-serif; }
-  .type-btn:hover { border-color: var(--purple); color: var(--purple-dark); background: var(--purple-light); }
   .type-btn.active { border-color: var(--purple); color: var(--purple-dark); background: var(--purple-light); font-weight: 500; }
   .type-btn-icon { font-size: 20px; margin-bottom: 4px; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
   .form-group { display: flex; flex-direction: column; gap: 6px; }
   label { font-size: 13px; color: var(--text-secondary); font-weight: 500; }
-  textarea, select, input { font-family: 'Inter', sans-serif; font-size: 14px; color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 14px; width: 100%; transition: border-color 0.15s; }
-  textarea:focus, select:focus, input:focus { outline: none; border-color: var(--purple); }
+  textarea, select { font-family: 'Inter', sans-serif; font-size: 14px; color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 14px; width: 100%; }
+  textarea:focus, select:focus { outline: none; border-color: var(--purple); }
   textarea { resize: vertical; min-height: 90px; }
-  .gen-btn { width: 100%; padding: 14px; background: var(--purple); color: white; border: none; border-radius: var(--radius-sm); font-size: 15px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Inter', sans-serif; transition: 0.15s; margin-top: 4px; }
+  .gen-btn { width: 100%; padding: 14px; background: var(--purple); color: white; border: none; border-radius: var(--radius-sm); font-size: 15px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Inter', sans-serif; margin-top: 4px; }
   .gen-btn:hover { background: var(--purple-dark); }
   .gen-btn:disabled { background: #ccc; cursor: not-allowed; }
   .usage-row { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 10px 14px; }
@@ -81,7 +64,7 @@
   .usage-text { font-size: 12px; color: var(--text-secondary); white-space: nowrap; }
   .output-box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 20px; margin-top: 20px; display: none; }
   .output-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
-  .output-label { font-size: 13px; font-weight: 500; color: var(--teal); display: flex; align-items: center; gap: 6px; }
+  .output-label { font-size: 13px; font-weight: 500; color: var(--teal); }
   .copy-btn { padding: 5px 12px; border: 1px solid var(--border); border-radius: 6px; background: white; font-size: 12px; cursor: pointer; font-family: 'Inter', sans-serif; }
   .output-text { font-size: 14px; color: var(--text); line-height: 1.8; white-space: pre-wrap; }
   .upgrade-box { background: var(--purple-light); border: 1px solid var(--purple-mid); border-radius: var(--radius); padding: 20px 24px; margin-top: 20px; display: none; }
@@ -94,7 +77,7 @@
   .feature-icon { width: 44px; height: 44px; background: var(--purple-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; font-size: 22px; }
   .feature-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
   .feature-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
-  .pricing { padding: 80px 24px; background: white; }
+  .pricing { padding: 80px 24px; }
   .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 860px; margin: 0 auto; }
   .price-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
   .price-card.popular { border: 2px solid var(--purple); }
@@ -109,36 +92,28 @@
   .price-btn { width: 100%; padding: 12px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif; border: 1px solid var(--border); background: white; transition: 0.15s; }
   .price-btn.filled { background: var(--purple); color: white; border-color: var(--purple); }
   .price-btn:hover { background: var(--purple-dark); color: white; border-color: var(--purple-dark); }
-  .testimonials { padding: 80px 24px; background: var(--bg-secondary); }
   .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; max-width: 1000px; margin: 0 auto; }
   .testi-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
   .stars { color: #F59E0B; font-size: 14px; margin-bottom: 10px; }
   .testi-text { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 14px; }
-  .testi-author { font-size: 13px; font-weight: 600; color: var(--text); }
+  .testi-author { font-size: 13px; font-weight: 600; }
   .testi-role { font-size: 12px; color: var(--text-secondary); }
-  .faq { padding: 80px 24px; max-width: 680px; margin: 0 auto; }
   .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; cursor: pointer; }
-  .faq-q { font-size: 15px; font-weight: 500; display: flex; justify-content: space-between; align-items: center; }
+  .faq-q { font-size: 15px; font-weight: 500; display: flex; justify-content: space-between; }
   .faq-a { font-size: 14px; color: var(--text-secondary); line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height 0.3s, margin-top 0.3s; }
   .faq-item.open .faq-a { max-height: 200px; margin-top: 10px; }
-  .faq-arrow { font-size: 18px; color: var(--text-secondary); transition: transform 0.3s; }
+  .faq-arrow { transition: transform 0.3s; }
   .faq-item.open .faq-arrow { transform: rotate(45deg); }
   .cta-banner { padding: 80px 24px; background: var(--purple); text-align: center; }
   .cta-banner h2 { font-family: 'Syne', sans-serif; font-size: clamp(26px, 4vw, 42px); font-weight: 700; color: white; margin-bottom: 14px; }
   .cta-banner p { font-size: 16px; color: rgba(255,255,255,0.8); margin-bottom: 28px; }
-  .btn-white { padding: 14px 32px; background: white; color: var(--purple); border-radius: var(--radius-sm); font-size: 15px; font-weight: 600; text-decoration: none; border: none; cursor: pointer; font-family: 'Inter', sans-serif; }
+  .btn-white { padding: 14px 32px; background: white; color: var(--purple); border-radius: var(--radius-sm); font-size: 15px; font-weight: 600; border: none; cursor: pointer; font-family: 'Inter', sans-serif; }
   footer { background: #111; color: rgba(255,255,255,0.6); padding: 40px 24px; text-align: center; }
   footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
   .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; font-size: 14px; }
-  .footer-copy { font-size: 13px; }
   .spinner { width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.7s linear infinite; display: inline-block; }
   @keyframes spin { to { transform: rotate(360deg); } }
-  @media (max-width: 600px) {
-    .form-row { grid-template-columns: 1fr; }
-    .nav-links .nav-link { display: none; }
-    h1 { font-size: 34px; }
-    .hero-stats { gap: 24px; }
-  }
+  @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } .nav-links .nav-link { display: none; } }
 </style>
 </head>
 <body>
@@ -146,9 +121,7 @@
 <nav>
   <div class="nav-inner">
     <a href="#" class="logo">
-      <div class="logo-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-      </div>
+      <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
       <span class="logo-name">WriteAI Pro</span>
     </a>
     <div class="nav-links">
@@ -181,13 +154,11 @@
     <div class="section-label">AI Writing Tool</div>
     <h2 class="section-title">Generate content instantly</h2>
     <p class="section-sub">Pick a content type, describe your topic, and let AI do the work.</p>
-
     <div class="usage-row">
       <span style="font-size:13px;color:#6b6b6b;">Daily usage</span>
       <div class="usage-bar"><div class="usage-fill" id="usage-fill" style="width:0%"></div></div>
       <span class="usage-text" id="usage-text">3 free uses remaining</span>
     </div>
-
     <div class="tool-card">
       <div style="margin-bottom:18px">
         <label style="margin-bottom:10px;display:block">Content type</label>
@@ -202,7 +173,7 @@
       </div>
       <div class="form-group" style="margin-bottom:16px">
         <label for="topic">Your topic or idea</label>
-        <textarea id="topic" placeholder="e.g. How to start a freelancing business in Pakistan with no experience..."></textarea>
+        <textarea id="topic" placeholder="e.g. How to start a freelancing business in Pakistan..."></textarea>
       </div>
       <div class="form-row">
         <div class="form-group">
@@ -228,7 +199,6 @@
       </div>
       <button class="gen-btn" id="gen-btn" onclick="generate()">✦ Generate with AI</button>
     </div>
-
     <div class="output-box" id="output-box">
       <div class="output-header">
         <span class="output-label">✓ Content ready</span>
@@ -236,10 +206,9 @@
       </div>
       <div class="output-text" id="output-text"></div>
     </div>
-
     <div class="upgrade-box" id="upgrade-box">
       <h3>You've used all free credits for today</h3>
-      <p>Upgrade to Pro for unlimited generations, longer content, and priority speed — just $9/month.</p>
+      <p>Upgrade to Pro for unlimited generations — just $9/month.</p>
       <button class="upgrade-btn" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">See Pro plans →</button>
     </div>
   </div>
@@ -251,12 +220,12 @@
     <h2 class="section-title">Everything you need to write faster</h2>
   </div>
   <div class="features-grid">
-    <div class="feature-card"><div class="feature-icon">⚡</div><div class="feature-title">Instant generation</div><div class="feature-desc">Get full blog posts, emails, and ads in under 30 seconds. No waiting, no writer's block.</div></div>
-    <div class="feature-card"><div class="feature-icon">🌍</div><div class="feature-title">Multi-language support</div><div class="feature-desc">Write in English, Urdu, Roman Urdu, Arabic, Hindi and more. Reach any audience globally.</div></div>
-    <div class="feature-card"><div class="feature-icon">🎯</div><div class="feature-title">6 content types</div><div class="feature-desc">Blogs, emails, ads, social posts, product descriptions, and SEO articles — all in one tool.</div></div>
-    <div class="feature-card"><div class="feature-icon">🔧</div><div class="feature-title">Custom tone & style</div><div class="feature-desc">Choose professional, friendly, persuasive, or casual — AI adapts to your brand voice.</div></div>
-    <div class="feature-card"><div class="feature-icon">📋</div><div class="feature-title">One-click copy</div><div class="feature-desc">Copy your content instantly and paste it anywhere — WordPress, Gmail, Instagram, anywhere.</div></div>
-    <div class="feature-card"><div class="feature-icon">🔒</div><div class="feature-title">Secure & private</div><div class="feature-desc">Your content is never stored or shared. What you write stays yours, always.</div></div>
+    <div class="feature-card"><div class="feature-icon">⚡</div><div class="feature-title">Instant generation</div><div class="feature-desc">Full blog posts, emails, and ads in under 30 seconds.</div></div>
+    <div class="feature-card"><div class="feature-icon">🌍</div><div class="feature-title">Multi-language</div><div class="feature-desc">Write in English, Urdu, Roman Urdu, Arabic, Hindi and more.</div></div>
+    <div class="feature-card"><div class="feature-icon">🎯</div><div class="feature-title">6 content types</div><div class="feature-desc">Blogs, emails, ads, social posts, product descriptions, SEO articles.</div></div>
+    <div class="feature-card"><div class="feature-icon">🔧</div><div class="feature-title">Custom tone</div><div class="feature-desc">Professional, friendly, persuasive — AI adapts to your style.</div></div>
+    <div class="feature-card"><div class="feature-icon">📋</div><div class="feature-title">One-click copy</div><div class="feature-desc">Copy instantly and paste anywhere — WordPress, Gmail, Instagram.</div></div>
+    <div class="feature-card"><div class="feature-icon">🔒</div><div class="feature-title">Private & secure</div><div class="feature-desc">Your content is never stored or shared. Always yours.</div></div>
   </div>
 </section>
 
@@ -275,7 +244,6 @@
         <li><span class="check">✓</span> 3 generations per day</li>
         <li><span class="check">✓</span> All 6 content types</li>
         <li><span class="check">✓</span> English & Urdu</li>
-        <li><span class="check">✓</span> Copy to clipboard</li>
         <li style="color:#ccc">✗ Unlimited generations</li>
         <li style="color:#ccc">✗ Long-form content</li>
       </ul>
@@ -290,9 +258,8 @@
         <li><span class="check">✓</span> Unlimited generations</li>
         <li><span class="check">✓</span> All 6 content types</li>
         <li><span class="check">✓</span> All languages</li>
-        <li><span class="check">✓</span> Long-form content (2000+ words)</li>
+        <li><span class="check">✓</span> Long-form (2000+ words)</li>
         <li><span class="check">✓</span> Priority speed</li>
-        <li><span class="check">✓</span> Email support</li>
       </ul>
       <button class="price-btn filled">Get Pro — $9/mo</button>
     </div>
@@ -306,64 +273,54 @@
         <li><span class="check">✓</span> API access</li>
         <li><span class="check">✓</span> Custom brand voice</li>
         <li><span class="check">✓</span> Priority support</li>
-        <li><span class="check">✓</span> Analytics dashboard</li>
       </ul>
       <button class="price-btn">Get Business</button>
     </div>
   </div>
 </section>
 
-<section class="testimonials">
-  <div style="text-align:center;margin-bottom:40px;max-width:1000px;margin-left:auto;margin-right:auto;padding-bottom:40px">
+<section style="padding:80px 24px;background:var(--bg-secondary)">
+  <div style="text-align:center;margin-bottom:40px">
     <div class="section-label">Testimonials</div>
     <h2 class="section-title">Loved by writers everywhere</h2>
   </div>
   <div class="testi-grid">
-    <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">"I used to spend 3 hours writing a blog post. Now WriteAI Pro does it in 30 seconds. It literally changed my business."</p><div class="testi-author">Ahmed R.</div><div class="testi-role">Content creator, Pakistan</div></div>
-    <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">"The Urdu content it generates is surprisingly natural. My social media engagement doubled since I started using it."</p><div class="testi-author">Sara M.</div><div class="testi-role">Social media manager, UAE</div></div>
-    <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">"Best $9 I spend every month. I use it for email campaigns and the persuasive tone option is incredible for sales."</p><div class="testi-author">James T.</div><div class="testi-role">E-commerce owner, UK</div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">"I used to spend 3 hours writing a blog post. WriteAI Pro does it in 30 seconds. Game changer!"</p><div class="testi-author">Ahmed R.</div><div class="testi-role">Content creator, Pakistan</div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">"The Urdu content is surprisingly natural. My social media engagement doubled!"</p><div class="testi-author">Sara M.</div><div class="testi-role">Social media manager, UAE</div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">"Best $9 I spend every month. The persuasive tone is incredible for sales emails."</p><div class="testi-author">James T.</div><div class="testi-role">E-commerce owner, UK</div></div>
   </div>
 </section>
 
-<section style="padding:80px 24px;background:white">
-  <div class="faq">
+<section style="padding:80px 24px">
+  <div style="max-width:680px;margin:0 auto">
     <div style="text-align:center;margin-bottom:40px">
       <div class="section-label">FAQ</div>
       <h2 class="section-title">Common questions</h2>
     </div>
-    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Is the free plan actually free? <span class="faq-arrow">+</span></div><div class="faq-a">Yes, 100% free. You get 3 generations per day forever with no credit card required.</div></div>
-    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">What languages are supported? <span class="faq-arrow">+</span></div><div class="faq-a">We support English, Urdu, Roman Urdu, Arabic, Hindi and more. Pro users get access to all available languages.</div></div>
-    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Can I cancel my Pro subscription anytime? <span class="faq-arrow">+</span></div><div class="faq-a">Yes, cancel anytime with one click. No questions asked, no hidden fees.</div></div>
-    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Is my content private? <span class="faq-arrow">+</span></div><div class="faq-a">Absolutely. Your inputs and generated content are never stored on our servers. Everything stays private.</div></div>
-    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">How long is the generated content? <span class="faq-arrow">+</span></div><div class="faq-a">Free plan generates 150-200 word pieces. Pro plan unlocks long-form content up to 2000+ words.</div></div>
+    <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">Is the free plan actually free? <span class="faq-arrow">+</span></div><div class="faq-a">Yes, 100% free. 3 generations per day, forever. No credit card required.</div></div>
+    <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">What languages are supported? <span class="faq-arrow">+</span></div><div class="faq-a">English, Urdu, Roman Urdu, Arabic, Hindi and more. Pro users get all languages.</div></div>
+    <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">Can I cancel anytime? <span class="faq-arrow">+</span></div><div class="faq-a">Yes, cancel anytime. No questions asked, no hidden fees.</div></div>
+    <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">Is my content private? <span class="faq-arrow">+</span></div><div class="faq-a">Absolutely. Your content is never stored on our servers.</div></div>
   </div>
 </section>
 
 <section class="cta-banner">
   <h2>Start writing smarter today</h2>
-  <p>Join 12,000+ writers using AI to create content faster than ever before.</p>
+  <p>Join 12,000+ writers using AI to create content faster.</p>
   <button class="btn-white" onclick="document.getElementById('tool').scrollIntoView({behavior:'smooth'})">Try it free — no signup needed</button>
 </section>
 
 <footer>
   <div class="footer-links">
-    <a href="#">Home</a>
-    <a href="#features">Features</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Terms of Service</a>
-    <a href="#">Contact</a>
+    <a href="#">Home</a><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#">Privacy Policy</a><a href="#">Contact</a>
   </div>
-  <div class="footer-copy">© 2025 WriteAI Pro. All rights reserved.</div>
+  <div style="font-size:13px">© 2025 WriteAI Pro. All rights reserved.</div>
 </footer>
 
 <script>
   let selectedType = 'blog';
   let usesLeft = 3;
   const MAX_USES = 3;
-
-  // ⚠️ APNI OPENROUTER API KEY YAHAN PASTE KARO
-  const API_KEY = 'YOUR_OPENROUTER_API_KEY_HERE';
 
   function selectType(el, type) {
     document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
@@ -373,61 +330,46 @@
 
   function updateUsage() {
     const used = MAX_USES - usesLeft;
-    const pct = Math.round((used / MAX_USES) * 100);
-    document.getElementById('usage-fill').style.width = pct + '%';
-    const txt = usesLeft > 0
+    document.getElementById('usage-fill').style.width = Math.round((used/MAX_USES)*100) + '%';
+    document.getElementById('usage-text').textContent = usesLeft > 0
       ? usesLeft + ' free use' + (usesLeft !== 1 ? 's' : '') + ' remaining today'
       : 'Daily limit reached — upgrade for unlimited';
-    document.getElementById('usage-text').textContent = txt;
     if (usesLeft === 0) document.getElementById('usage-fill').style.background = '#D85A30';
   }
 
   async function generate() {
     const topic = document.getElementById('topic').value.trim();
     if (!topic) { document.getElementById('topic').focus(); return; }
-    if (usesLeft <= 0) {
-      document.getElementById('upgrade-box').style.display = 'block';
-      document.getElementById('upgrade-box').scrollIntoView({behavior:'smooth'});
-      return;
-    }
+    if (usesLeft <= 0) { document.getElementById('upgrade-box').style.display = 'block'; return; }
 
     const tone = document.getElementById('tone').value;
     const lang = document.getElementById('lang').value;
     const btn = document.getElementById('gen-btn');
     const outBox = document.getElementById('output-box');
     const outText = document.getElementById('output-text');
-    const typeMap = { blog: 'blog post', email: 'email', ad: 'advertisement copy', social: 'social media post', product: 'product description', seo: 'SEO-optimized article' };
-    const prompt = `Write a ${tone} ${typeMap[selectedType]} in ${lang} about: "${topic}". Make it engaging, well-structured, and ready to use. Around 180-220 words.`;
+    const typeMap = { blog:'blog post', email:'email', ad:'advertisement copy', social:'social media post', product:'product description', seo:'SEO-optimized article' };
+    const prompt = `Write a ${tone} ${typeMap[selectedType]} in ${lang} about: "${topic}". Make it engaging and ready to use. Around 180-220 words.`;
 
     btn.disabled = true;
     btn.innerHTML = '<span class="spinner"></span> Generating...';
     outBox.style.display = 'none';
 
     try {
-      const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+      const res = await fetch('/api/generate', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + API_KEY,
-          'HTTP-Referer': window.location.href,
-          'X-Title': 'WriteAI Pro'
-        },
-        body: JSON.stringify({
-          model: 'meta-llama/llama-3.2-3b-instruct:free',
-          messages: [{ role: 'user', content: prompt }],
-          max_tokens: 800
-        })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt })
       });
       const data = await res.json();
-      const text = data.choices?.[0]?.message?.content || 'Error generating. Please try again.';
-      outText.textContent = text;
+      if (data.error) throw new Error(data.error);
+      outText.textContent = data.text;
       outBox.style.display = 'block';
       outBox.scrollIntoView({ behavior: 'smooth' });
       usesLeft--;
       updateUsage();
       if (usesLeft === 0) setTimeout(() => { document.getElementById('upgrade-box').style.display = 'block'; }, 600);
     } catch(e) {
-      outText.textContent = 'Network error. Please check your connection and try again.';
+      outText.textContent = 'Error: ' + (e.message || 'Please try again.');
       outBox.style.display = 'block';
     }
 
@@ -436,15 +378,12 @@
   }
 
   function copyOutput() {
-    const text = document.getElementById('output-text').textContent;
-    navigator.clipboard.writeText(text).then(() => {
+    navigator.clipboard.writeText(document.getElementById('output-text').textContent).then(() => {
       const btn = document.querySelector('.copy-btn');
       btn.textContent = 'Copied!';
       setTimeout(() => btn.textContent = 'Copy text', 1500);
     });
   }
-
-  function toggleFaq(el) { el.classList.toggle('open'); }
 
   updateUsage();
 </script>
