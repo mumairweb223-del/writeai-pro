@@ -33,11 +33,9 @@ export default async function handler(req, res) {
     const text = data.choices?.[0]?.message?.content || 'Error generating content.';
     return res.status(200).json({ text });
 } catch (error) {
+  const details = error.response ? error.response.status + " + error.response.statusText : "No details";
   return res.status(500).json({ 
     error: error.message,
-    details: error.response ? await error.response.text() : "No details"
+    details: details
   });
-}
-  return res.status(500).json({ error: error.message });
-}
 }
