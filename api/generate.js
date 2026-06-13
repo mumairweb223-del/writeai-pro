@@ -32,9 +32,12 @@ export default async function handler(req, res) {
     }
     const text = data.choices?.[0]?.message?.content || 'Error generating content.';
     return res.status(200).json({ text });
- } catch (error) {
-  console.log("OpenRouter Error:", error.message);
-  console.log("Full Error:", error);
+} catch (error) {
+  return res.status(500).json({ 
+    error: error.message,
+    details: error.response ? await error.response.text() : "No details"
+  });
+}
   return res.status(500).json({ error: error.message });
 }
 }
